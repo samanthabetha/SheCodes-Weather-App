@@ -1,0 +1,123 @@
+body {
+  background: white;
+  color: #92b4ec;
+  font-family: "Roboto", sans-serif;
+}
+input,
+textarea,
+select {
+  border: 0px solid #92b4ec;
+  border-bottom-width: 3px;
+  background-color: transparent;
+  width: 40%;
+  caret-color: #ffd24c;
+  color: #92b4ec;
+}
+input::placeholder,
+textarea::placeholder {
+  opacity: 1;
+  color: #ffd24c;
+}
+input:focus,
+textarea:focus {
+  outline: none;
+}
+h2 {
+  font-size: 25px;
+  font-weight: 100;
+}
+hr {
+  margin-top: 15px;
+  margin-bottom: auto;
+  margin-left: 20px;
+  color: #92b4ec;
+  opacity: 0.75;
+  border-top: 3px solid;
+}
+.app {
+  display: block;
+  margin: auto;
+  padding: 10px;
+  border-radius: 10px;
+  background-color: #ffe69a;
+  margin-top: 20px;
+  max-width: 525px;
+}
+.btn {
+  background-color: #92b4ec;
+  color: #ffd24c;
+}
+.date-and-time {
+  margin-bottom: 5px;
+}
+.weather-now {
+  margin: 5px;
+  height: 125px;
+}
+.today-icon {
+  color: #ffd24c;
+  font-size: 100px;
+  margin-top: 5px;
+}
+.temp-main {
+  font-size: 60px;
+  height: 50px;
+  font-weight: 100px;
+  margin-bottom: 20px;
+  padding: 0px;
+}
+span#current-temp {
+  font-size: 70px;
+  font-weight: 100px;
+}
+
+.bar {
+  font-size: 16px;
+  vertical-align: text-top;
+  color: #92b4ec;
+}
+.temp-unit {
+  font-size: 16px;
+  vertical-align: text-top;
+  color: #92b4ec;
+  text-decoration: none;
+}
+.temp-unit:hover {
+  color: #ffd24c;
+}
+.temp-today {
+  font-size: 25px;
+  text-align: center;
+  margin: 15px;
+}
+p.temp-today {
+  padding: 0px;
+  margin: 0px;
+}
+.icon-other {
+  font-size: 20px;
+  padding: 5px;
+  text-align: center;
+}
+.day {
+  font-size: 30px;
+}
+.day-temp {
+  font-size: 20px;
+}
+.icon {
+  color: #ffd24c;
+  font-size: 40px;
+}
+.icon-other {
+  float: center;
+}
+.today {
+  padding: 10px;
+}
+.forecast {
+  padding: 10px;
+}
+.next {
+  margin-top: 10px;
+}
