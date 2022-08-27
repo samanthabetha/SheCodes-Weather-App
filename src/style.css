@@ -121,3 +121,9 @@ p.temp-today {
 .next {
   margin-top: 10px;
 }
+.credit {
+  text-align: center;
+}
+.github-link {
+  color: #ffd24c;
+}
