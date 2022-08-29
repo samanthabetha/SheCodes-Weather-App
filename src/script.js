@@ -39,6 +39,10 @@ if (minutes < 10) {
 todaysdate.innerHTML = `${day} ${month} ${date} ${hour}:${minutes}`;
 
 function defaultWeather(response) {
+  let description = response.data.weather[0].description;
+  let descHeading = document.querySelector("#description");
+  descHeading.innerHTML = `${description}`;
+
   let temp = Math.round(response.data.main.temp);
   let tempPlace = document.querySelector("#current-temp");
   tempPlace.innerHTML = `${temp}`;

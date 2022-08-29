@@ -50,6 +50,9 @@ hr {
 .date-and-time {
   margin-bottom: 5px;
 }
+.description {
+  text-transform: capitalize;
+}
 .weather-now {
   margin: 5px;
   height: 125px;
