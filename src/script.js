@@ -97,6 +97,10 @@ searchCity.addEventListener("submit", showCity);
 function displayWeather(response) {
   console.log(response);
 
+  let description = response.data.weather[0].description;
+  let descHeading = document.querySelector("#description");
+  descHeading.innerHTML = `${description}`;
+
   let temp = Math.round(response.data.main.temp);
   let tempPlace = document.querySelector("#current-temp");
   tempPlace.innerHTML = `${temp}`;
@@ -136,6 +140,10 @@ function showCity(event) {
 }
 
 function displayWeatherHere(response) {
+  let description = response.data.weather[0].description;
+  let descHeading = document.querySelector("#description");
+  descHeading.innerHTML = `${description}`;
+
   let temp = Math.round(response.data.main.temp);
   let tempPlace = document.querySelector("#current-temp");
   tempPlace.innerHTML = `${temp}`;
