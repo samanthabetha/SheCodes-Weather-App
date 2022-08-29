@@ -28,9 +28,44 @@ let months = [
 let month = months[now.getMonth()];
 let date = now.getDate();
 let hour = now.getHours();
+if (hour < 10) {
+  hour = `0${hour}`;
+}
 let minutes = now.getMinutes();
+if (minutes < 10) {
+  minutes = `0${minutes}`;
+}
 
 todaysdate.innerHTML = `${day} ${month} ${date} ${hour}:${minutes}`;
+
+function defaultWeather(response) {
+  let temp = Math.round(response.data.main.temp);
+  let tempPlace = document.querySelector("#current-temp");
+  tempPlace.innerHTML = `${temp}`;
+
+  let tempMax = Math.round(response.data.main.temp_max);
+  let tempHigh = document.querySelector("#today-high-temp");
+  tempHigh.innerHTML = `${tempMax}°`;
+
+  let tempMin = Math.round(response.data.main.temp_min);
+  let tempLow = document.querySelector("#today-low-temp");
+  tempLow.innerHTML = `${tempMin}°`;
+
+  let realFeel = Math.round(response.data.main.feels_like);
+  let outsideFeel = document.querySelector("#real-feel");
+  outsideFeel.innerHTML = `${realFeel}°`;
+
+  let humidity = Math.round(response.data.main.humidity);
+  let humidFeel = document.querySelector("#humidity");
+  humidFeel.innerHTML = `${humidity}%`;
+
+  let wind = Math.round(response.data.wind.speed);
+  let windSpeed = document.querySelector("#wind");
+  windSpeed.innerHTML = `${wind}`;
+}
+let apiKey = "d3ed35f8e3c5e8bda54aa029ee3425b4";
+let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tel-Aviv&appid=${apiKey}&units=metric`;
+axios.get(apiUrl).then(defaultWeather);
 
 function showCelcius(event) {
   event.preventDefault();
