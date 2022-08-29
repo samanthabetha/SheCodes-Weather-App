@@ -39,6 +39,8 @@ if (minutes < 10) {
 todaysdate.innerHTML = `${day} ${month} ${date} ${hour}:${minutes}`;
 
 function defaultWeather(response) {
+  celciusTemp = response.data.main.temp;
+
   let description = response.data.weather[0].description;
   let descHeading = document.querySelector("#description");
   descHeading.innerHTML = `${description}`;
@@ -65,31 +67,17 @@ function defaultWeather(response) {
 
   let wind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind");
-  windSpeed.innerHTML = `${wind}`;
+  windSpeed.innerHTML = `  ${wind}`;
+
+  let icon = document.querySelector("#current-icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 let apiKey = "d3ed35f8e3c5e8bda54aa029ee3425b4";
 let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=Tel-Aviv&appid=${apiKey}&units=metric`;
 axios.get(apiUrl).then(defaultWeather);
-
-function showCelcius(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-
-  currentTemp.innerHTML = "18";
-}
-
-let celcius = document.querySelector("#celcius");
-celcius.addEventListener("click", showCelcius);
-
-function showFarhenheit(event) {
-  event.preventDefault();
-  let currentTemp = document.querySelector("#current-temp");
-
-  currentTemp.innerHTML = "66";
-}
-
-let farhenheit = document.querySelector("#farhenheit");
-farhenheit.addEventListener("click", showFarhenheit);
 
 let searchCity = document.querySelector("#search-city");
 searchCity.addEventListener("submit", showCity);
@@ -97,6 +85,8 @@ searchCity.addEventListener("submit", showCity);
 function displayWeather(response) {
   console.log(response);
 
+  celciusTemp = response.data.main.temp;
+
   let description = response.data.weather[0].description;
   let descHeading = document.querySelector("#description");
   descHeading.innerHTML = `${description}`;
@@ -124,6 +114,12 @@ function displayWeather(response) {
   let wind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = `${wind}`;
+
+  let icon = document.querySelector("#current-icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
 
 function showCity(event) {
@@ -140,6 +136,8 @@ function showCity(event) {
 }
 
 function displayWeatherHere(response) {
+  celciusTemp = response.data.main.temp;
+
   let description = response.data.weather[0].description;
   let descHeading = document.querySelector("#description");
   descHeading.innerHTML = `${description}`;
@@ -167,7 +165,36 @@ function displayWeatherHere(response) {
   let wind = Math.round(response.data.wind.speed);
   let windSpeed = document.querySelector("#wind");
   windSpeed.innerHTML = `${wind}`;
+
+  let icon = document.querySelector("#current-icon");
+  icon.setAttribute(
+    "src",
+    `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+  );
 }
+
+function showCelcius(event) {
+  event.preventDefault();
+  let currentTemp = document.querySelector("#current-temp");
+
+  currentTemp.innerHTML = Math.round(celciusTemp);
+}
+
+let celcius = document.querySelector("#celcius");
+celcius.addEventListener("click", showCelcius);
+
+function showFarhenheit(event) {
+  event.preventDefault();
+  let farTemp = (celciusTemp * 9) / 5 + 32;
+  let currentTemp = document.querySelector("#current-temp");
+
+  currentTemp.innerHTML = Math.round(farTemp);
+}
+
+let farhenheit = document.querySelector("#farhenheit");
+farhenheit.addEventListener("click", showFarhenheit);
+
+let celciusTemp = null;
 
 function retrievePosition(position) {
   let lat = position.coords.latitude;

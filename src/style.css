@@ -97,10 +97,20 @@ p.temp-today {
   padding: 0px;
   margin: 0px;
 }
+.high-temp {
+  font-weight: bold;
+}
+.weather-icon {
+  width: auto;
+}
+.temp-now {
+  width: 200px;
+}
 .icon-other {
   font-size: 20px;
-  padding: 5px;
-  text-align: center;
+  width: 75px;
+  margin-left: 50px;
+  margin-top: 20px;
 }
 .day {
   font-size: 30px;

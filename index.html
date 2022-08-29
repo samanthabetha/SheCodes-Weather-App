@@ -40,20 +40,20 @@
             <h2 id="date-time"></h1>
           </div>
           <div class="row description">
-            <h2 id = "description">Clear</h2>
+            <h2 id ="description">Clear</h2>
           </div>
         </div>
         <div class="row weather-now">
           <div class="col-4 weather-icon text-center">
-              <i class="fa-solid fa-sun today-icon"></i>
+            <img src="http://openweathermap.org/img/wn/01d@2x.png" alt="sunny" id="current-icon">
           </div>
           <div class="col-4">
 						<div class="row temp-now">
 							<p class="temp-main">
 							  <span id="current-temp"></span>
-							  <a class="temp-unit" id="celcius" href="">°C</a> 
+							  <a class="temp-unit active" id="celcius" href="">°C</a> 
 								<a class="bar">|</a>
-								<a class="temp-unit" id="farhenheit"href="">°F</a> 
+								<a class="temp-unit active" id="farhenheit"href="">°F</a> 
               </p>
             </div>
             <div class="row high-low">
@@ -61,27 +61,24 @@
               <div class="col-1 temp-today" id="today-low-temp"></div>
             </div>
           </div>  
-          <div class="col-4">
-            <div class="row icon-other">
+          <div class="col-4 icon-other">
+            <div class="row">
               <div class="col-2">
                 <i class="fa-solid fa-temperature-half"></i>
               </div>
               <div class="col-2" id="real-feel"></div>
             </div>
-            <div class="row  icon-other">
+            <div class="row">
                  <div class="col-2">
                 <i class="fa-solid fa-droplet"></i>
                 </div>
-                <div class="col-2" id="humidity">
-                
-                 </div>
+                <div class="col-2" id="humidity"></div>
             </div>
-            <div class="row percip icon-other">
+            <div class="row wind">
                  <div class="col-2">
-                <i class="fa-solid fa-wind"></i>
+                <i class="fa-solid fa-wind"></i> 
                 </div>
-                <div class="col-2" id="wind"> 
-                </div>
+                <div class="col-2" id="wind"></div>
             </div>
           </div>
         </div>
