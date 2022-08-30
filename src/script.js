@@ -136,8 +136,6 @@ function showCity(event) {
 }
 
 function displayWeatherHere(response) {
-  celciusTemp = response.data.main.temp;
-
   let description = response.data.weather[0].description;
   let descHeading = document.querySelector("#description");
   descHeading.innerHTML = `${description}`;
@@ -176,6 +174,8 @@ function displayWeatherHere(response) {
 function showCelcius(event) {
   event.preventDefault();
   let currentTemp = document.querySelector("#current-temp");
+  farhenheit.classList.remove("active");
+  celcius.classList.add("active");
 
   currentTemp.innerHTML = Math.round(celciusTemp);
 }
@@ -187,6 +187,8 @@ function showFarhenheit(event) {
   event.preventDefault();
   let farTemp = (celciusTemp * 9) / 5 + 32;
   let currentTemp = document.querySelector("#current-temp");
+  celcius.classList.remove("active");
+  farhenheit.classList.add("active");
 
   currentTemp.innerHTML = Math.round(farTemp);
 }

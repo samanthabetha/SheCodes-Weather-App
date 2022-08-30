@@ -82,11 +82,15 @@ span#current-temp {
 .temp-unit {
   font-size: 16px;
   vertical-align: text-top;
-  color: #92b4ec;
   text-decoration: none;
+  color: #ffd24c;
 }
 .temp-unit:hover {
-  color: #ffd24c;
+  color: #92b4ec;
+}
+.active {
+  color: #92b4ec;
+  cursor: default;
 }
 .temp-today {
   font-size: 25px;
@@ -128,11 +132,14 @@ p.temp-today {
 .today {
   padding: 10px;
 }
-.forecast {
+.forecast-day {
   padding: 10px;
+  font-size: 20px;
+  text-align: center;
+  line-height: 100px;
 }
-.next {
-  margin-top: 10px;
+.forecast-day-weather-max {
+  font-weight: bold;
 }
 .credit {
   text-align: center;
