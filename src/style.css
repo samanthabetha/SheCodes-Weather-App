@@ -48,10 +48,11 @@ hr {
   color: #ffd24c;
 }
 .date-and-time {
-  margin-bottom: 5px;
+  margin-bottom: 0px;
 }
 .description {
   text-transform: capitalize;
+  margin-bottom: auto;
 }
 .weather-now {
   margin: 5px;
@@ -133,10 +134,13 @@ p.temp-today {
   padding: 10px;
 }
 .forecast-day {
-  padding: 10px;
   font-size: 20px;
   text-align: center;
   line-height: 100px;
+  margin-left: 5px;
+  margin-top: 0px;
+  margin-bottom: 0px;
+  padding: 0px;
 }
 .forecast-day-weather-max {
   font-weight: bold;

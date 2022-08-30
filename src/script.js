@@ -38,6 +38,31 @@ if (minutes < 10) {
 
 todaysdate.innerHTML = `${day} ${month} ${date} ${hour}:${minutes}`;
 
+function displayForecast() {
+  let forecastElement = document.querySelector("#forecast-weather");
+  let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday"];
+  let forecastHTML = `<div class="row">`;
+  days.forEach(function (day) {
+    forecastHTML =
+      forecastHTML +
+      `
+      <div class="row forecast-day" id="forecast-weather">
+          <div class="col forecast-day-date">${day}</div>
+          <div class="col forecast-day-icon">
+            <img src="http://openweathermap.org/img/wn/02d@2x.png" alt="weather">
+          </div>
+          <div class="col forecast-day-weather">
+            <span class="forecast-day-weather-max">18°</span>
+            <span class="forecast-day-weather-min">12°</span>
+          </div>
+        </div>
+  `;
+  });
+
+  forecastHTML = forecastHTML + `</div>`;
+  forecastElement.innerHTML = forecastHTML;
+}
+
 function defaultWeather(response) {
   celciusTemp = response.data.main.temp;
 
@@ -214,3 +239,5 @@ function findLocation(event) {
 
 let currentLocation = document.querySelector("#current-location");
 currentLocation.addEventListener("click", findLocation);
+
+displayForecast();
